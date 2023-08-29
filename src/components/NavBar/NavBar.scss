@@ -1,21 +1,54 @@
 nav {
-  margin-top: 1rem;
+  margin: 2rem auto;
   display: flex;
   width: 100%;
-  align-items: center;
   justify-content: center;
 }
 
 .navlinks {
-  margin: 0.5rem;
-  padding: 1.5rem;
-  font-size: 4rem;
+  font-family: "Against", sans-serif;
+  margin: 3rem 1rem;
+  padding: 1rem 1.5rem;
+  font-size: 3rem;
   text-decoration: none;
   background-color: black;
   color: white;
-  border-radius: 2rem;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out,
+    transform 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.navlinks::before {
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2));
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.navlinks:hover::before {
+  transform: translateX(100%);
+}
+
+.navlinks:hover {
+  cursor: pointer;
+  background-color: crimson;
 }
 
 .active {
-  color: salmon;
+  background-color: black;
+  color: white;
+}
+
+.navlinks:focus {
+  outline: none;
+}
+
+.navlinks:active {
+  transform: translateY(2px);
 }

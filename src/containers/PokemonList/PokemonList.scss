@@ -1,24 +1,62 @@
 .message {
   font-size: 3rem;
+  font-family: "Against", sans-serif;
+  color: white;
 }
 
 .list-wrapper {
   width: 80%;
   margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .pokemon-item {
-  display: flex;
-  margin: 1rem;
-  padding: 1rem;
+  flex: calc(33.33% - 1rem);
+  margin: 0.5rem;
+  padding: 2rem;
+  background-color: #2b2b2b;
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.pokemon-item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
   width: 100%;
-  justify-content: space-between;
-  border: 2px solid salmon;
-  border-radius: 2rem;
+  height: 100%;
+  background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2));
+  transition: transform 0.3s ease-in-out;
+  z-index: -1;
+}
+
+.pokemon-item:hover::before {
+  transform: translateX(100%);
+}
+
+.pokemon-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.4);
+  background-color: #222;
 }
 
 .view-pokemon {
-  color: black;
+  font-family: "Georgia", serif;
+  line-height: normal;
+  color: #ffcb05;
   text-decoration: none;
-  font-size: 3rem;
+  font-size: 2.5rem;
+  font-style: italic;
+  transition: color 0.2s ease-in-out;
+}
+
+.view-pokemon:hover {
+  color: #ffa500;
+  text-shadow: 0 0 10px #ffa500, 0 0 20px #ffa500, 0 0 30px #ffa500;
 }

@@ -1,6 +1,7 @@
 .poke {
-  width: 100%;
+  width: 80%;
   margin: auto;
+  text-align: center;
 }
 
 .pokemon-wrapper {
@@ -14,10 +15,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px;
-  border-radius: 10px;
-  padding: 2rem;
+  margin: 1rem;
+  padding: 3rem;
+  border-radius: 2rem;
   box-sizing: border-box;
+  transition: transform 0.2s ease-in-out;
 }
 
 .floating-image {
@@ -40,19 +42,28 @@
 
 .pokemon-name {
   text-align: center;
-  font-size: 5rem;
+  font-size: 7rem;
   padding: 1rem;
-  margin: 1rem;
+  margin: 3rem 0;
   width: 100%;
+  color: #ff5733;
 }
 
 .item {
-  font-size: 3rem;
-  width: 30%;
-  height: 30%;
-  margin: 5px;
-  border: 2px solid #ccc;
-  border-radius: 10px;
-  padding: 30px;
+  font-size: 4rem;
+  width: calc(33.33% - 1rem);
+  height: auto;
+  margin: 0.5rem;
+  border: 2px solid #ff5733;
+  border-radius: 1rem;
+  padding: 2rem;
   box-sizing: border-box;
+  box-shadow: 0 0.7rem 2rem rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.item:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.15);
 }
