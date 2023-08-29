@@ -11,7 +11,7 @@ function App() {
       </header>
       <Routes>
         <Route path={"/"} element={<PokemonList />} />
-        <Route path={"/pokemon"} element={<Pokemon />} />
+        <Route path={"/pokemon/:pokemon"} element={<Pokemon />} />
       </Routes>
     </div>
   );
