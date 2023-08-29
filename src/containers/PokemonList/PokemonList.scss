@@ -1,3 +1,22 @@
 .message {
   font-size: 3rem;
 }
+
+.list-wrapper {
+  width: 80%;
+  margin: auto;
+}
+
+.pokemon-item {
+  display: flex;
+  margin: 1rem;
+  padding: 1rem;
+  width: 100%;
+  justify-content: space-between;
+  border: 2px solid salmon;
+  border-radius: 2rem;
+}
+
+.view-pokemon {
+  font-size: 3rem;
+}

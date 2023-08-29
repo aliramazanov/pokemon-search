@@ -1,5 +1,6 @@
 import _ from "lodash";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import { useEffect } from "react";
 import { GetPokemonList } from "../../store/actions/dataActions";
 import "./PokemonList.scss";
@@ -25,7 +26,13 @@ export default function PokemonList() {
           {pokemonList.data.map((el) => {
             return (
               <div key={el.name} className={"pokemon-item"}>
-                <p className="message">{el.name}</p>
+                <p className="message">
+                  {el.name.charAt(0).toUpperCase() +
+                    el.name.slice(1).toLowerCase()}
+                </p>
+                <Link className="view-pokemon" to={`/pokemon/${el.name}`}>
+                  View
+                </Link>
               </div>
             );
           })}

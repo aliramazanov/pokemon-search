@@ -6,9 +6,15 @@ nav {
 }
 
 .navlinks {
-  font-size: 5rem;
+  margin: 0.5rem;
+  padding: 1.5rem;
+  font-size: 4rem;
+  text-decoration: none;
+  background-color: black;
+  color: white;
+  border-radius: 2rem;
 }
 
 .active {
-  color: red;
+  color: salmon;
 }
