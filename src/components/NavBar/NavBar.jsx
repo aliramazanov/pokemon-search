@@ -7,9 +7,6 @@ export default function NavBar() {
       <NavLink className={"navlinks"} to={"/"}>
         Home
       </NavLink>
-      <NavLink className={"navlinks"} to={"/tests"}>
-        Search
-      </NavLink>
     </nav>
   );
 }
