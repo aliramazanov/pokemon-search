@@ -61,18 +61,18 @@ export default function Pokemon() {
     }
 
     if (pokemonState.loading) {
-      return <p>Loading...</p>;
+      return <p className="loading">Loading...</p>;
     }
 
     if (pokemonState.errorMsg !== "") {
       return <p>{capitalizeFirstLetter(pokemonState.errorMsg)}</p>;
     }
 
-    return <p>Error getting pokemon</p>;
+    return <p>Couldn't get your Pokemons</p>;
   };
 
   return (
-    <div className={"poke"}>
+    <div className="poke">
       <h1 className="pokemon-name">{capitalizeFirstLetter(pokemonName)}</h1>
       {showData()}
     </div>

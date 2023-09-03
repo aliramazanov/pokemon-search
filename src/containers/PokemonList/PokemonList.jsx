@@ -29,7 +29,7 @@ export default function PokemonList() {
 
   const showData = () => {
     if (isLoading) {
-      return <p>Loading...</p>;
+      return <p className="loading">Loading...</p>;
     }
     if (!_.isEmpty(pokemonList.data)) {
       return (
@@ -51,7 +51,7 @@ export default function PokemonList() {
     if (pokemonList.errorMsg !== "") {
       return <p>{pokemonList.errorMsg}</p>;
     }
-    return <p>Unable to get data</p>;
+    return <p>Couldn't get your Pokemons</p>;
   };
 
   return (
