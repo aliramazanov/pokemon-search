@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 import { GetPokemon } from "../../store/actions/dataActions";
 import _ from "lodash";
 import "./Pokemon.scss";
+import { CircularProgress } from "@mui/material";
 
 export default function Pokemon() {
   const { pokemon: pokemonName } = useParams();
@@ -61,14 +62,21 @@ export default function Pokemon() {
     }
 
     if (pokemonState.loading) {
-      return <p className="loading">Loading...</p>;
+      return (
+        <div className="">
+          <p className="loading">
+            <CircularProgress color="inherit" />
+          </p>
+          ;
+        </div>
+      );
     }
 
     if (pokemonState.errorMsg !== "") {
       return <p>{capitalizeFirstLetter(pokemonState.errorMsg)}</p>;
     }
 
-    return <p>Couldn't get your Pokemons</p>;
+    return <p>Couldn`&apos;`t get your Pokemons</p>;
   };
 
   return (

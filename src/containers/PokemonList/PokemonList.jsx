@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { GetPokemonList } from "../../store/actions/dataActions";
 import ReactPaginate from "react-paginate";
 import "./PokemonList.scss";
+import { CircularProgress } from "@mui/material";
 
 export default function PokemonList() {
   const dispatch = useDispatch();
@@ -17,6 +18,7 @@ export default function PokemonList() {
     const initialPage = storedPage ? parseInt(storedPage) : 1;
     setCurrentPage(initialPage);
     FetchData(initialPage);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const FetchData = async (page = 1) => {
@@ -29,8 +31,14 @@ export default function PokemonList() {
 
   const showData = () => {
     if (isLoading) {
-      return <p className="loading">Loading...</p>;
+      return (
+        <p className="loading">
+          {" "}
+          <CircularProgress color="inherit" />
+        </p>
+      );
     }
+
     if (!_.isEmpty(pokemonList.data)) {
       return (
         <div className={"list-wrapper"}>
@@ -48,10 +56,17 @@ export default function PokemonList() {
         </div>
       );
     }
+
     if (pokemonList.errorMsg !== "") {
-      return <p>{pokemonList.errorMsg}</p>;
+      <div className="errorforfetch">
+        <p className="errorfetchtext">{pokemonList.errorMsg}</p>
+      </div>;
     }
-    return <p>Couldn't get your Pokemons</p>;
+    return (
+      <div className="errorforfetch">
+        <p className="errorfetchtext">Couldn`&apos;`t get your Pokemons</p>
+      </div>
+    );
   };
 
   return (
@@ -70,7 +85,7 @@ export default function PokemonList() {
               forcePage={currentPage - 1}
               initialPage={parseInt(localStorage.getItem("currentPage")) - 1}
             />
-            {isLoading && <p>Loading...</p>}
+            {isLoading && <CircularProgress />}
           </>
         )}
       </div>

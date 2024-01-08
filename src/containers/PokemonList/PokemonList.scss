@@ -79,3 +79,13 @@
     border-color: black;
   }
 }
+
+.errorforfetch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+  .errorfetchtext {
+    font-size: 32px;
+  }
+}
